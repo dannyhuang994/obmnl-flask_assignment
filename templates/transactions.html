@@ -38,6 +38,9 @@
             background-color: #f6d365;
             border-color: #f6d365;
         }
+        .transaction-total{
+            text-align:center
+        }
     </style>
 </head>
 <body>
@@ -69,6 +72,18 @@
         <div class="d-flex justify-content-center">
             <a class="btn btn-success" href="{{ url_for('add_transaction') }}">Add Transaction</a>
         </div>
+
+        <!--show this only if the total is other than 0-->
+        {% if total and total != 0 %}
+            <br>
+            <div class="transaction-total" >
+                    <h2>Transaction Total: {{total}}</h2>
+            </div>
+        {% endif %}
+
     </div>
+
+ 
+ 
 </body>
 </html>
